@@ -1,7 +1,8 @@
 {
   "name": "holdfast",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lock your browser to what you are studying. No early exit, no account, nothing leaves your browser.",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "scripts": {

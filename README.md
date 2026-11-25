@@ -39,3 +39,7 @@ npm test
 `npm run build` without `--store` also blocks the browser's extensions page during a lock. The first build downloads the model from Hugging Face.
 
 Third-party licenses are in `licenses/`.
+
+## License
+
+[MIT](LICENSE). Free to use, change and share. See also the [privacy policy](PRIVACY.md).

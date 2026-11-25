@@ -62,6 +62,7 @@ for (const target of ['chrome', 'firefox']) {
   for (const file of ['ort-wasm-simd-threaded.asyncify.mjs', 'ort-wasm-simd-threaded.asyncify.wasm']) {
     fs.copyFileSync(`node_modules/onnxruntime-web/dist/${file}`, `${out}/ort/${file}`);
   }
+  fs.copyFileSync('LICENSE', `${out}/LICENSE`);
   fs.cpSync('licenses', `${out}/licenses`, { recursive: true });
 
   const common = { bundle: true, outdir: out, target: 'es2022', define: { PERSONAL: String(PERSONAL), FIREFOX: String(FIREFOX) } };
