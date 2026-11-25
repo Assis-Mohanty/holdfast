@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Holdfast</title><link rel="stylesheet" href="ui.css"><link rel="stylesheet" href="popup.css"></head>
+<body>
+<main id="setup" hidden>
+  <header><h1>Holdfast</h1><span class="time" id="chosen"></span></header>
+  <input type="range" id="minutes" min="5" max="240" step="5" aria-label="Lock length">
+  <div class="presets" id="presets">
+    <button data-m="25">25 min</button><button data-m="60">1 hour</button><button data-m="120">2 hours</button><button data-m="240">4 hours</button>
+  </div>
+  <section id="toggles"></section>
+  <section class="box" id="sitesBox">
+    <h2>Allowed sites</h2>
+    <ul id="sites"></ul>
+    <form id="siteForm"><input id="siteInput" placeholder="chatgpt.com" aria-label="Site to allow" spellcheck="false"><button>Add</button></form>
+    <button class="link" id="addCurrent" hidden></button>
+  </section>
+  <section class="box" id="videosBox">
+    <h2>Allowed videos and playlists</h2>
+    <ul id="videos"></ul>
+    <form id="videoForm"><input id="videoInput" placeholder="Paste a YouTube link" aria-label="YouTube link" spellcheck="false"><button>Add</button></form>
+    <button class="link" id="addVideo" hidden>Add the video in this tab</button>
+    <button class="link" id="addList" hidden>Add the playlist in this tab</button>
+  </section>
+  <p id="note" class="hint" hidden></p>
+  <p id="error" role="alert"></p>
+  <footer>
+    <button class="primary" id="lock">Lock</button>
+    <div id="confirm" hidden>
+      <p><b id="confirmText"></b> There is no way to end it early. Blocked tabs are replaced and reload when it ends, so save your work first.</p>
+      <div class="row"><button id="cancel">Cancel</button><button class="primary" id="confirmLock">Start the lock</button></div>
+    </div>
+  </footer>
+</main>
+<main id="running" hidden>
+  <h1>Holdfast</h1>
+  <p class="time big" id="left"></p>
+  <p class="dim" id="until"></p>
+  <ul id="active"></ul>
+</main>
+<script type="module" src="popup.js"></script>
+</body>
+</html>

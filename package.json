@@ -1,0 +1,19 @@
+{
+  "name": "holdfast",
+  "version": "0.1.0",
+  "description": "Lock your browser to what you are studying. No early exit, no account, nothing leaves your browser.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/rules.test.mjs",
+    "test:e2e": "node test/e2e.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "puppeteer-core": "^25.18.1"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.3.2"
+  }
+}

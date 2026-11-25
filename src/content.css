@@ -1,0 +1,16 @@
+html[data-holdfast-shorts] :is(
+  ytd-reel-shelf-renderer, ytd-rich-shelf-renderer[is-shorts], grid-shelf-view-model,
+  ytd-guide-entry-renderer:has(a[title='Shorts']), ytd-mini-guide-entry-renderer[aria-label='Shorts'],
+  ytd-rich-item-renderer:has(a[href^='/shorts/']), ytd-video-renderer:has(a[href^='/shorts/']),
+  ytd-grid-video-renderer:has(a[href^='/shorts/']), yt-lockup-view-model:has(a[href^='/shorts/'])
+) { display: none !important; }
+
+html[data-holdfast-filter] [data-holdfast='hide'] { display: none !important; }
+
+/* Smart filter: nothing shows until it has passed. */
+html[data-holdfast-smart] :is(ytd-rich-item-renderer, ytd-video-renderer, ytd-compact-video-renderer, ytd-grid-video-renderer, yt-lockup-view-model):not([data-holdfast='keep']):not([data-holdfast='keep'] *) { display: none !important; }
+html[data-holdfast-smart] :is(.ytp-ce-element, .ytp-endscreen-content, .ytp-autonav-endscreen, .ytp-fullscreen-grid) { display: none !important; }
+
+html[data-holdfast-video] :is(#related, #comments, .ytp-ce-element, .ytp-endscreen-content, .ytp-autonav-endscreen, .ytp-fullscreen-grid, ytd-masthead #center) { display: none !important; }
+
+html[data-holdfast-checking] #movie_player { visibility: hidden !important; }
